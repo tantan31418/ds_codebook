@@ -5,6 +5,7 @@
 #include<iostream>
 #include<string>
 #include<stack>
+#define DEBUG 1
 //use stack to implement
 
 using namespace std;
@@ -45,11 +46,13 @@ int is_op(char c){
 
 string conver_posfx(string infx){
     stack<char> st;
+    infx = '(' + infx + ')'; //to initialize
     int s_len = infx.length();
     string post;
     for (int i=0;i<s_len;i++){
+        if (DEBUG) cout<<st.top()<<endl;
         if (infx[i]=='('){
-            post.push_back('(');
+            st.push('(');
         }
         else if(infx[i]==')'){
             while(st.top()!='('){
