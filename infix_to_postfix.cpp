@@ -1,12 +1,13 @@
 /*
  * 2020/10/13 DS Week3 Stack&Queue
+ * Use stack to implement postfix convert
 */
 
 #include<iostream>
 #include<string>
 #include<stack>
-#define DEBUG 1
-//use stack to implement
+#define DEBUG 0
+
 
 using namespace std;
 
@@ -50,12 +51,13 @@ string conver_posfx(string infx){
     int s_len = infx.length();
     string post;
     for (int i=0;i<s_len;i++){
-        if (DEBUG) cout<<st.top()<<endl;
+        if (DEBUG) cout<<"line53"<<endl;
         if (infx[i]=='('){
             st.push('(');
         }
         else if(infx[i]==')'){
             while(st.top()!='('){
+                if(DEBUG) cout<<"line59"<<endl;
                 post.push_back(st.top());
                 st.pop();
             }
