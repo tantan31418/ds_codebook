@@ -26,6 +26,18 @@ private:
     int capacity;
 };
 
+
+// test
+int main(){
+    Stack<int> s1(0);
+    Stack<int> s2(20);
+    Stack<int> s3;
+    return 0;
+}
+
+
+
+
 template <class T>
 Stack<T>::Stack(int stackCapacity) : capacity(stackCapacity)
 {
@@ -33,12 +45,14 @@ Stack<T>::Stack(int stackCapacity) : capacity(stackCapacity)
         throw "Capacity must be >0";
     stack = new T[capacity];
     top = -1;
+    cout<<"Stack initialized..."<<endl;
 }
 
 template <class T>
 Stack<T>::~Stack()
 {
     delete[] stack;
+    cout<<"Stack destroyed."<<endl;
 }
 
 template <class T>
@@ -64,6 +78,7 @@ void Stack<T>::Push(const T &item)
         capacity *= 2;
     }
     stack[++top] = item; //top++,then push element to stack[top+1]
+    cout<<"Push "<<stack[top]<<" to stack."<<endl;
 }
 
 template <class T>
@@ -71,6 +86,7 @@ void Stack<T>::Pop()
 {
     if (IsEmpty())
         throw "Stack is empty. Cannot delete.";
+    cout<<"Pop "<<stack[top]<<" from stack."<<endl;
     stack[top--].~T(); //Delete the element at stack[top], then top--
 }
 
@@ -84,4 +100,5 @@ void Stack<T>::ChangeSize1D(int new_size)
     }
     delete[] stack;
     stack = newstack;
+    cout<<"New stack size is"<<new_size<<".\n";
 }
