@@ -3,7 +3,8 @@
  * Implement Queue
  * ADT and some code from textbook:<<Fundamentals Of Data Structures In C++>>
 */
-
+#ifndef QUEUE_H
+#define QUEUE_H
 #include <iostream>
 using namespace std;
 
@@ -124,3 +125,5 @@ void Queue<T>::ChangeSize1D(int new_size)
     queue = newqueue;
     cout << "New queue size is" << new_size << ".\n";
 }
+
+#endif
