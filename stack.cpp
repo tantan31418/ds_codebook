@@ -29,9 +29,21 @@ private:
 
 // test
 int main(){
-    Stack<int> s1(0);
+    // Stack<int> s1(0);
     Stack<int> s2(20);
     Stack<int> s3;
+    for (int i=0;i<20;i++){
+        s2.Push(i);
+    }
+    for (int i=0;i<10;i++){
+        s3.Push(i);
+    }
+    for (int i=0;i<10;i++){
+        cout<<"s3.Top="<<s3.Top()<<"\n";   
+    }
+    for (int i=0;i<10;i++){
+        s3.Pop();   
+    }
     return 0;
 }
 
@@ -74,7 +86,7 @@ void Stack<T>::Push(const T &item)
 {
     if (top == capacity - 1)
     {
-        Changesize1D(2 * capacity);
+        ChangeSize1D(2 * capacity);
         capacity *= 2;
     }
     stack[++top] = item; //top++,then push element to stack[top+1]
