@@ -3,7 +3,8 @@
  * Implement Stack
  * ADT and some code from textbook:<<Fundamentals Of Data Structures In C++>>
 */
-
+#ifndef STACK_H
+#define STACK_H
 #include<iostream>
 using namespace std;
 
@@ -90,3 +91,5 @@ void Stack<T>::ChangeSize1D(int new_size)
     stack = newstack;
     cout<<"New stack size is"<<new_size<<".\n";
 }
+
+#endif
