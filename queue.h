@@ -96,7 +96,7 @@ void Queue<T>::ChangeSize1D(int new_size)
     int start = (front+1)%capacity;
     if (start < 2)
     { //front==0||front==capacity-1,no wrap
-        int new_pos = 0
+        int new_pos = 0;
         for (int i = start; i <= rear; i++)
         {
             newqueue[new_pos] = queue[i];
