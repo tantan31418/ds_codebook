@@ -120,7 +120,6 @@ void Queue<T>::ChangeSize1D(int new_size)
     }
     front = new_size-1;
     rear = capacity-2;
-    capacity = new_size;
     delete[] queue;
     queue = newqueue;
     cout << "New queue size is" << new_size << ".\n";
