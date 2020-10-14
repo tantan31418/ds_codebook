@@ -28,7 +28,7 @@ private:
 };
 
 template <class T>
-Queue<T>::Queue(int stackCapacity) : capacity(stackCapacity)
+Queue<T>::Queue(int queueCapacity) : capacity(queueCapacity)
 {
     if (capacity < 1)
         throw "Capacity must be >0";
