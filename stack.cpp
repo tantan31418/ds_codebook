@@ -74,7 +74,7 @@ void Stack<T>::Push(const T &item)
 {
     if (top == capacity - 1)
     {
-        Changeize1D(2 * capacity);
+        Changesize1D(2 * capacity);
         capacity *= 2;
     }
     stack[++top] = item; //top++,then push element to stack[top+1]
